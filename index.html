@@ -24,6 +24,21 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Music</title>
     <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
 
     <style>
@@ -38,6 +53,57 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - The album duration
             - etc
          */
+
+      body {
+        background-color: #dcc9b6;
+      }
+
+      .albumContainer {
+        background: #6d4c3d;
+        border-radius: 5px;
+      }
+
+      .albumCover {
+        width: 300px;
+        height: 300px;
+      }
+
+      .albumTitle {
+        font-family: "Permanent Marker", cursive;
+        color: #abc4ab;
+      }
+
+      .albumArtist {
+        font-family: "Caveat", cursive;
+        color: #abc4ab;
+      }
+
+      .albumGenre {
+        font-family: "Caveat", cursive;
+        color: #abc4ab;
+      }
+
+      .albumDuration {
+        font-family: "Caveat", cursive;
+        color: #abc4ab;
+      }
+
+      .albumList {
+        font-family: "Permanent Marker", cursive;
+        color: #6d4c3d;
+      }
+
+      .albumTracklist {
+        background: #6d4c3d;
+        font-family: "Caveat", cursive;
+        color: #abc4ab;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -45,6 +111,38 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             Implement a navigation bar using the bootstrap component
             This navigation bar must be linked to every section in your page
         -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#albums">Albums</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hallOfShame">Hall of Shame</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#stan">Stan</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- EXERCISE 3
             Create a responsive section for your favourite albums.
@@ -53,7 +151,221 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - 3 albums per row when you are on a tablet (or a smaller window)
             - 2 albums per row when you are on a small screen
         -->
+    <div id="albums" class="container">
+      <div class="row text-center mt-4">
+        <div class="card col-6 col-sm-4 col-xl-3 albumContainer mx-auto">
+          <img
+            src="img/xx_album_cover.svg.png"
+            class="card-img-top rounded"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title albumTitle">xx</h4>
+            <h5 class="card-text albumArtist">The xx</h5>
+            <div class="d-flex justify-content-around">
+              <h5 class="card-text albumGenre">Indie Pop</h5>
+              <h5 class="card-text albumDuration">38:34</h5>
+            </div>
 
+            <a
+              href="#xxTracklist"
+              data-toggle="collapse"
+              role="button"
+              class="btn btn-dark"
+              >Tracklist</a
+            >
+            <div class="collapse" id="xxTracklist">
+              <div class="card-text">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item albumTracklist">Intro</li>
+                  <li class="list-group-item albumTracklist">VCR</li>
+                  <li class="list-group-item albumTracklist">Crystalised</li>
+                  <li class="list-group-item albumTracklist">Islands</li>
+                  <li class="list-group-item albumTracklist">
+                    Heart Skipped a Beat
+                  </li>
+                  <li class="list-group-item albumTracklist">Fantasy</li>
+                  <li class="list-group-item albumTracklist">Shelter</li>
+                  <li class="list-group-item albumTracklist">Basic Space</li>
+                  <li class="list-group-item albumTracklist">Infinity</li>
+                  <li class="list-group-item albumTracklist">Night Time</li>
+                  <li class="list-group-item albumTracklist">Stars</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card col-6 col-sm-4 col-xl-3 albumContainer mx-auto">
+          <img src="img/starbomb.webp" class="card-img-top rounded" alt="..." />
+          <div class="card-body">
+            <h4 class="card-title albumTitle">Starbomb</h4>
+            <h5 class="card-text albumArtist">Starbomb</h5>
+            <div class="d-flex justify-content-around">
+              <h5 class="card-text albumGenre">Comedy hip hop</h5>
+              <h5 class="card-text albumDuration">26:58</h5>
+            </div>
+
+            <a
+              href="#starbombTracklist"
+              data-toggle="collapse"
+              role="button"
+              class="btn btn-dark"
+              >Tracklist</a
+            >
+            <div class="collapse" id="starbombTracklist">
+              <div class="card-text">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item albumTracklist">Intro</li>
+                  <li class="list-group-item albumTracklist">
+                    I Choose You to Die
+                  </li>
+                  <li class="list-group-item albumTracklist">Luigi's Ballad</li>
+                  <li class="list-group-item albumTracklist">
+                    It's Dangerous to Do Alone
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Mega Marital Problems
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Rap Battle: Ryu vs. Ken
+                  </li>
+                  <li class="list-group-item albumTracklist">Crasher-vania</li>
+                  <li class="list-group-item albumTracklist">
+                    The Book of Nook
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Sonic's Best Pal
+                  </li>
+                  <li class="list-group-item albumTracklist">Regretroid</li>
+                  <li class="list-group-item albumTracklist">
+                    Kirby's Adventures in Reamland
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    The Simple Plot of Final Fantasy 7
+                  </li>
+                  <li class="list-group-item albumTracklist">Outro</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card col-6 col-sm-4 col-xl-3 albumContainer mx-auto">
+          <img
+            src="img/sonic-firestorm.jpg"
+            class="card-img-top rounded"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title albumTitle">Sonic Firestorm</h4>
+            <h5 class="card-text albumArtist">Dragonforce</h5>
+            <div class="d-flex justify-content-around">
+              <h5 class="card-text albumGenre">Power Metal</h5>
+              <h5 class="card-text albumDuration">56:35</h5>
+            </div>
+
+            <a
+              href="#sonicTracklist"
+              data-toggle="collapse"
+              role="button"
+              class="btn btn-dark"
+              >Tracklist</a
+            >
+            <div class="collapse" id="sonicTracklist">
+              <div class="card-text">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item albumTracklist">
+                    My Spirit Will Go On
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Fury of the Storm
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Fields of Despair
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Dawn Over a New World
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Above the Winter Moonlight
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Soldiers of the Wasteland
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Prepare for War
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Once in a Lifetime
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    Cry of the Brave
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card col-6 col-sm-4 col-xl-3 albumContainer mx-auto">
+          <img
+            src="img/pmj-essentials.jpg"
+            class="card-img-top rounded"
+            alt="..."
+          />
+          <div class="card-body">
+            <h4 class="card-title albumTitle">The Essentials</h4>
+            <h5 class="card-text albumArtist">Postmodern Jukebox</h5>
+            <div class="d-flex justify-content-around">
+              <h5 class="card-text albumGenre">Jazz/Swing covers</h5>
+              <h5 class="card-text albumDuration">67:00</h5>
+            </div>
+
+            <a
+              href="#pmjTracklist"
+              data-toggle="collapse"
+              role="button"
+              class="btn btn-dark"
+              >Tracklist</a
+            >
+            <div class="collapse" id="pmjTracklist">
+              <div class="card-text">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item albumTracklist">We Can't Stop</li>
+                  <li class="list-group-item albumTracklist">Maps</li>
+                  <li class="list-group-item albumTracklist">Creep</li>
+                  <li class="list-group-item albumTracklist">
+                    All About That Bass
+                  </li>
+                  <li class="list-group-item albumTracklist">No Diggity</li>
+                  <li class="list-group-item albumTracklist">
+                    I Believe in a Thing Called Love
+                  </li>
+                  <li class="list-group-item albumTracklist">
+                    My Heart Will Go On
+                  </li>
+                  <li class="list-group-item albumTracklist">Royals</li>
+                  <li class="list-group-item albumTracklist">Stacy's Mom</li>
+                  <li class="list-group-item albumTracklist">Rude</li>
+                  <li class="list-group-item albumTracklist">
+                    Sweet Child O'Mine
+                  </li>
+                  <li class="list-group-item albumTracklist">Thrift Shop</li>
+                  <li class="list-group-item albumTracklist">Burn</li>
+                  <li class="list-group-item albumTracklist">
+                    Seven Nation Army
+                  </li>
+                  <li class="list-group-item albumTracklist">Sorry</li>
+                  <li class="list-group-item albumTracklist">Halo</li>
+                  <li class="list-group-item albumTracklist">Hey Ya!</li>
+                  <li class="list-group-item albumTracklist">
+                    Such Great Heights
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- EXERCISE 4
             Create a section for the album review.
             Pick one of your fav albums, and create a section with:
@@ -65,18 +377,178 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - Tracklist
             - ... And whatever you think it's interesting about it!
         -->
-
+    <div id="info" class="container">
+      <div class="row mt-4">
+        <div class="col-5 col-md-3">
+          <div class="list-group text-center" id="list-tab" role="tablist">
+            <a
+              class="list-group-item list-group-item-action list-group-item-dark albumList"
+              id="list-xx-list"
+              data-toggle="list"
+              href="#list-xx"
+              role="tab"
+              aria-controls="xx"
+              >xx</a
+            >
+            <a
+              class="list-group-item list-group-item-action list-group-item-dark albumList"
+              id="list-starbomb-list"
+              data-toggle="list"
+              href="#list-starbomb"
+              role="tab"
+              aria-controls="starbomb"
+              >Starbomb</a
+            >
+            <a
+              class="list-group-item list-group-item-action list-group-item-dark albumList"
+              id="list-sonicF-list"
+              data-toggle="list"
+              href="#list-sonicF"
+              role="tab"
+              aria-controls="sonicF"
+              >Sonic Firestorm</a
+            >
+            <a
+              class="list-group-item list-group-item-action list-group-item-dark albumList"
+              id="list-pmj-list"
+              data-toggle="list"
+              href="#list-pmj"
+              role="tab"
+              aria-controls="pmj"
+              >The Essentials</a
+            >
+          </div>
+        </div>
+        <div class="col-7 col-md-9">
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active albumContainer"
+              id="list-xx"
+              role="tabpanel"
+              aria-labelledby="list-xx-list"
+            >
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Molestiae optio temporibus quo nobis porro consequuntur, officia
+                minus dicta iusto eligendi consequatur eius, sequi nostrum ad?
+                Consequuntur sequi iusto pariatur dolor.
+              </p>
+            </div>
+            <div
+              class="tab-pane fade albumContainer"
+              id="list-starbomb"
+              role="tabpanel"
+              aria-labelledby="list-starbomb-list"
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+                aliquam porro magnam, eius dicta vel mollitia laborum temporibus
+                nisi veritatis repellat, obcaecati impedit? Alias dolores
+                perspiciatis et sed est nostrum?
+              </p>
+            </div>
+            <div
+              class="tab-pane fade albumContainer"
+              id="list-sonicF"
+              role="tabpanel"
+              aria-labelledby="list-sonicF-list"
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptatem similique itaque, possimus cupiditate earum doloribus
+                laborum illo quas nemo maiores dolores dolorum ea odit incidunt
+                expedita quae. Quidem, eum nisi?
+              </p>
+            </div>
+            <div
+              class="tab-pane fade albumContainer"
+              id="list-pmj"
+              role="tabpanel"
+              aria-labelledby="list-pmj-list"
+            >
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod
+                vel magnam nemo cum, modi dolorum alias delectus nulla
+                recusandae pariatur explicabo. Molestias, incidunt est similique
+                ducimus doloremque recusandae sit expedita?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- EXERCISE 5
             Worst album list! Find out the music you don't really like or you find overrated and list it
             in this "hall of shame" chart!
         -->
-
+    <div id="hallOfShame" class="container mt-4">
+      <div class="col-12 text-center">
+        <h2>Bad Albums</h2>
+      </div>
+      <div class="row mt-4">
+        <div class="col-4">
+          <img
+            src="img/placeholder.jpg"
+            class="rounded float-left img-fluid"
+            alt="bad_album"
+          />
+        </div>
+        <div class="col-8 albumContainer">
+          <p>
+            I generally like all music, so i've decided I hate this album based
+            solely on the cover. The music itself might be good, because
+            accordions sound great, but I will never listen to this album
+            because of its cover. He looks like an unholy fusion of Pablo
+            Escobar and Borat.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-8 albumContainer">
+          <p>
+            Dick Black, I don't know who you are or who your producer is.
+            Please, for the love of music, slap whoever named your album. I feel
+            like I might enjoy your music, but I will never listen to it because
+            of your terrible album name.
+          </p>
+        </div>
+        <div class="col-4">
+          <img
+            src="img/bad_album2.jpg"
+            class="rounded float-right img-fluid"
+            alt="bad_album_2"
+          />
+        </div>
+      </div>
+    </div>
     <!-- EXERCISE 6
             Do you have any musician / band you admire or you are fan of?
             This section is dedicated to him / her / them!
             Feel free to experiment in this part of the page.
         -->
-
+    <div id="stan" class="container mt-4">
+      <div class="col-12 text-center">
+        <h2>Best Albums</h2>
+      </div>
+      <div class="row mt-4">
+        <div class="col-8 albumContainer">
+          <p>
+            I'm running out of time for the tasks. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Quidem, tenetur. Ipsam mollitia,
+            ducimus recusandae laborum magni maxime voluptatum ab repellendus
+            quod? Debitis velit fuga aspernatur! Soluta ex veniam voluptatum
+            modi.
+          </p>
+        </div>
+        <div class="col-4">
+          <img
+            src="img/stan.jpg"
+            class="rounded float-right img-fluid"
+            alt="stan_album"
+          />
+        </div>
+      </div>
+    </div>
     <!-- EXERCISE 7
             Just covers!
             Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
@@ -86,7 +558,15 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     <!-- EXERCISE 8
             Implement a footer with some information / social links
         -->
-
+    <footer>
+      <div class="container-fluid mt-4">
+        <div class="row bg-dark text-light">
+          <div class="col">
+            <p>Lorem</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- EXTRA:
          EXERCISE 9
             Create album details that are going to be toggled on and off by clicking on the album image
@@ -100,5 +580,21 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             EXERCISE 11
             Add in the footer a field that counts, on page load, how many ALBUMS are on the page 
         -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
